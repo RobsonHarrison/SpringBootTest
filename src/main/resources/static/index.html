@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My HTML Page</title>
+<!--    <script>-->
+<!--      function getData() {-->
+<!--        fetch("/data")-->
+<!--          .then(response => response.json())-->
+<!--          .then(data => {-->
+<!--            var table = "<table><tr><th>Name</th><th>Age</th></tr>";-->
+<!--            data.data.forEach(function(person) {-->
+<!--              table += "<tr><td>" + person.name + "</td><td>" + person.age + "</td></tr>";-->
+<!--            });-->
+<!--            table += "</table>";-->
+<!--            document.getElementById("data-table").innerHTML = table;-->
+<!--          });-->
+<!--      }-->
+<!--    </script>-->
+    <script>
+      function getQuotes() {
+        fetch("/data")
+          .then(response => response.json())
+          .then(data => {
+            var table = "<table><tr><th>Name</th><th>Age</th></tr>";
+            data.data.forEach(function(person) {
+              table += "<tr><td>" + Quote.id + "</td><td>" + Quote.quote + "</td></tr>";
+            });
+            table += "</table>";
+            document.getElementById("data-table").innerHTML = table;
+          });
+      }
+    </script>
+</head>
+<body onload="getData()">
+<h1>Welcome to my HTML Page</h1>
+<p>This is a sample HTML page returned from a Spring Boot controller.</p>
+
+
+
+
+
+<div id="data-table"></div>
+</body>
+</html>
